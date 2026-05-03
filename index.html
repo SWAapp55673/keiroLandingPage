@@ -217,7 +217,7 @@
       padding: 96px 48px 88px 56px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
     }
     .hero__title {
       font-family: 'Cormorant Garamond', serif;
@@ -604,102 +604,145 @@
       text-align: center;
     }
 
-    /* todo */
-    .app-todo { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
-    .todo-input-row { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
-    .todo-input {
-      flex: 1; background: transparent; border: none; outline: none;
-      font-family: 'Syne', sans-serif; font-size: 12px;
-      color: var(--neve); padding: 9px 13px;
-    }
-    .todo-input::placeholder { color: var(--muted); }
-    .todo-add {
-      width: 36px; background: transparent; border: none;
-      border-left: 1px solid var(--border);
-      color: var(--areia); font-size: 18px; line-height: 1;
-      cursor: pointer; transition: background 0.15s;
-    }
-    .todo-add:hover { background: rgba(200,184,154,0.1); }
-    .todo-list { flex: 1; list-style: none; overflow-y: auto; }
-    .todo-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 8px 13px; border-bottom: 1px solid var(--border);
-      cursor: pointer; transition: background 0.15s;
-    }
-    .todo-item:hover { background: rgba(13,13,13,0.03); }
-    .todo-item:last-child { border-bottom: none; }
-    .todo-cb {
-      width: 15px; height: 15px;
-      border: 1px solid var(--border-2); border-radius: 2px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 9px; flex-shrink: 0;
-      color: var(--obsidian); transition: background 0.15s, border-color 0.15s;
-    }
-    .todo-done .todo-cb { background: var(--areia); border-color: var(--areia); }
-    .todo-text { font-size: 12px; color: var(--neve); transition: color 0.15s; line-height: 1.4; }
-    .todo-done .todo-text { color: var(--muted); text-decoration: line-through; }
+    /* --- phone mockup --- */
+    .phone-wrap { display: flex; justify-content: center; padding: 4px 0 8px; }
+    .phone { width: 162px; height: 320px; background: #D6D3CE; border-radius: 36px; padding: 8px; box-shadow: 0 0 0 1px rgba(0,0,0,0.12), 0 12px 40px rgba(0,0,0,0.14), inset 0 0 0 1px rgba(255,255,255,0.55); display: flex; flex-direction: column; flex-shrink: 0; }
+    .phone-screen { flex: 1; background: #FAF9F7; border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
+    .phone-sb { display: flex; align-items: center; justify-content: space-between; padding: 8px 14px 2px; flex-shrink: 0; }
+    .phone-time { font-family: 'Syne', sans-serif; font-size: 9px; font-weight: 600; color: rgba(13,13,13,0.85); }
+    .phone-island { width: 44px; height: 11px; background: #111; border-radius: 6px; }
+    .phone-batt { font-family: 'Syne Mono', monospace; font-size: 8px; color: rgba(13,13,13,0.45); letter-spacing: 0.04em; }
+    .phone-screens { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+    .phone-s { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
+    .phone-s--hidden { display: none; }
+    .phone-scroll { flex: 1; overflow-y: auto; padding: 6px 12px 8px; display: flex; flex-direction: column; gap: 8px; scrollbar-width: none; }
+    .phone-scroll::-webkit-scrollbar { display: none; }
+    .phone-nav { height: 46px; border-top: 1px solid rgba(0,0,0,0.08); background: rgba(250,249,247,0.95); display: flex; flex-shrink: 0; }
+    .phone-nav-btn { flex: 1; border: none; background: transparent; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: rgba(13,13,13,0.25); transition: color 0.15s; }
+    .phone-nav-btn--active { color: #C8B89A; }
+    .phone-nav-icon { font-size: 14px; line-height: 1; }
+    .phone-nav-lbl { font-family: 'Syne Mono', monospace; font-size: 7px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .phone-indicator { height: 4px; width: 36px; background: rgba(0,0,0,0.15); border-radius: 2px; margin: 0 auto 5px; flex-shrink: 0; }
+    /* financial app */
+    .fin-card { background: linear-gradient(135deg, rgba(200,184,154,0.18), rgba(200,184,154,0.06)); border: 1px solid rgba(200,184,154,0.35); border-radius: 12px; padding: 10px 12px; }
+    .fin-lbl { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #9B8670; display: block; margin-bottom: 4px; }
+    .fin-big { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: #0D0D0D; display: block; line-height: 1; }
+    .fin-row-sm { display: flex; gap: 8px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.08); }
+    .fin-sm-item { flex: 1; }
+    .fin-sm-lbl { font-family: 'Syne Mono', monospace; font-size: 7px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(13,13,13,0.45); display: block; }
+    .fin-sm-val { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; display: block; margin-top: 2px; }
+    .fin-green { color: #7B9E8A; }
+    .fin-sand { color: #C8B89A; }
+    .fin-section-lbl { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(13,13,13,0.38); }
+    .fin-bars { display: flex; gap: 3px; align-items: flex-end; height: 34px; }
+    .fin-bar { flex: 1; border-radius: 2px 2px 0 0; min-height: 3px; opacity: 0.7; }
+    .fin-bar--g { background: #7B9E8A; }
+    .fin-bar--s { background: #C8B89A; }
+    .fin-tx { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .fin-tx:last-child { border-bottom: none; }
+    .fin-tx-ico { width: 26px; height: 26px; border-radius: 8px; background: rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+    .fin-tx-info { flex: 1; min-width: 0; }
+    .fin-tx-name { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 500; color: #0D0D0D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+    .fin-tx-cat { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.08em; color: rgba(13,13,13,0.42); text-transform: uppercase; }
+    .fin-tx-val { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 600; flex-shrink: 0; }
+    .fin-goal { display: flex; flex-direction: column; gap: 4px; }
+    .fin-goal-hd { display: flex; justify-content: space-between; align-items: baseline; }
+    .fin-goal-name { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 500; color: #0D0D0D; }
+    .fin-goal-pct { font-family: 'Syne Mono', monospace; font-size: 8px; color: #9B8670; }
+    .fin-goal-track { height: 4px; background: rgba(0,0,0,0.08); border-radius: 2px; overflow: hidden; }
+    .fin-goal-fill { height: 100%; border-radius: 2px; background: #C8B89A; }
+    .fin-goal-meta { font-family: 'Syne Mono', monospace; font-size: 7.5px; color: rgba(13,13,13,0.4); }
 
-    /* dashboard */
-    .app-dash { flex: 1; padding: 12px 13px; display: flex; flex-direction: column; gap: 10px; overflow: hidden; }
-    .dash-tabs { display: flex; gap: 4px; }
-    .dash-tab {
-      font-family: 'Syne Mono', monospace; font-size: 9px;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 4px 10px; border: 1px solid var(--border-2);
-      background: transparent; color: var(--muted-2);
-      cursor: pointer; transition: all 0.15s;
-    }
-    .dash-tab--active { background: var(--areia); border-color: var(--areia); color: var(--obsidian); }
-    .dash-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .dash-metric { border: 1px solid var(--border); padding: 7px 9px; }
-    .dash-val { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 17px; color: var(--neve); display: block; line-height: 1; }
-    .dash-key { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 4px; }
-    .dash-chart { flex: 1; border: 1px solid var(--border); padding: 8px 8px 4px; overflow: hidden; min-height: 0; }
-    .dash-bars { display: flex; gap: 3px; align-items: flex-end; height: 100%; }
-    .dash-bar {
-      flex: 1; background: var(--areia); opacity: 0.45;
-      transition: height 0.35s ease, opacity 0.2s; min-height: 2px;
-    }
-    .dash-bar:hover { opacity: 0.85; }
+    /* --- lp demo --- */
+    .lp-wrap { flex: 1; overflow-y: auto; display: flex; flex-direction: column; background: #FAF9F7; position: relative; }
+    .lp-topnav { position: sticky; top: 0; z-index: 1; background: rgba(250,249,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); height: 28px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; flex-shrink: 0; }
+    .lp-brand { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 300; color: var(--neve); }
+    .lp-navlinks { display: flex; gap: 10px; }
+    .lp-navlinks button { border: none; background: transparent; cursor: pointer; font-family: 'Syne Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); transition: color 0.15s; padding: 0; }
+    .lp-navlinks button:hover { color: var(--areia); }
+    .lp-hero-sec { padding: 20px 14px 18px; border-bottom: 1px solid var(--border); }
+    .lp-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 20px; line-height: 1.15; color: var(--neve); margin-bottom: 8px; }
+    .lp-h1 em { font-style: italic; color: var(--areia); }
+    .lp-sub { font-size: 11px; color: var(--muted-2); line-height: 1.5; margin-bottom: 12px; }
+    .lp-hero-btn { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.05em; padding: 6px 14px; background: var(--areia); border: none; color: var(--obsidian); cursor: pointer; transition: opacity 0.15s; }
+    .lp-hero-btn:hover { opacity: 0.85; }
+    .lp-feat-sec { padding: 14px; border-bottom: 1px solid var(--border); }
+    .lp-feat-heading { font-family: 'Syne Mono', monospace; font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+    .lp-feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .lp-feat-card { border: 1px solid var(--border-2); padding: 10px 8px; text-align: center; }
+    .lp-feat-icon { font-size: 16px; display: block; margin-bottom: 4px; }
+    .lp-feat-name { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 500; color: var(--neve); }
+    .lp-cta-sec { padding: 16px 14px; }
+    .lp-cta-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; color: var(--neve); margin-bottom: 10px; line-height: 1.2; }
+    .lp-cta-title em { font-style: italic; color: var(--areia); }
+    .lp-outline-btn { font-family: 'Syne', sans-serif; font-size: 10px; font-weight: 500; letter-spacing: 0.05em; padding: 6px 14px; background: transparent; border: 1px solid var(--border-2); color: var(--neve); cursor: pointer; transition: all 0.15s; }
+    .lp-outline-btn:hover { border-color: var(--areia); color: var(--areia); }
+    /* lp course extras */
+    .lp-ai-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.25); border-radius: 100px; padding: 3px 10px; font-family: 'Syne Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #a78bfa; margin-bottom: 10px; }
+    .lp-price-strip { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .lp-price-old { font-family: 'Syne Mono', monospace; font-size: 10px; color: rgba(250,249,247,0.32); text-decoration: line-through; }
+    .lp-price-new { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: #FAF9F7; line-height: 1; }
+    .lp-btn--purple { background: #7C3AED; border: none; width: 100%; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 9px 14px; color: white; cursor: pointer; transition: opacity 0.15s; }
+    .lp-btn--purple:hover { opacity: 0.88; }
+    .lp-proof-bar { display: flex; border-top: 1px solid rgba(0,0,0,0.07); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .lp-proof-item { flex: 1; text-align: center; padding: 8px 4px; border-right: 1px solid rgba(0,0,0,0.07); display: flex; flex-direction: column; gap: 1px; }
+    .lp-proof-item:last-child { border-right: none; }
+    .lp-proof-strong { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: #0D0D0D; }
+    .lp-proof-label { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(13,13,13,0.42); }
+    .lp-plain-sec { padding: 14px; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .lp-section-hd { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 700; color: #0D0D0D; margin-bottom: 10px; }
+    .lp-checks { display: flex; flex-direction: column; gap: 6px; }
+    .lp-check { font-size: 11px; color: rgba(13,13,13,0.72); line-height: 1.4; display: flex; gap: 7px; }
+    .lp-check-mark { color: #7C3AED; font-weight: 700; flex-shrink: 0; }
+    .lp-module { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .lp-module:last-child { border-bottom: none; }
+    .lp-mod-num { font-family: 'Syne Mono', monospace; font-size: 8px; letter-spacing: 0.1em; color: #7C3AED; flex-shrink: 0; width: 16px; }
+    .lp-mod-name { font-size: 11px; color: #0D0D0D; font-weight: 500; }
+    .lp-testi { background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.07); border-radius: 6px; padding: 10px; margin-bottom: 8px; }
+    .lp-testi:last-child { margin-bottom: 0; }
+    .lp-testi-stars { color: #F59E0B; font-size: 10px; margin-bottom: 5px; letter-spacing: 1px; }
+    .lp-testi-text { font-size: 10px; line-height: 1.55; color: rgba(13,13,13,0.68); margin-bottom: 5px; font-style: italic; }
+    .lp-testi-author { font-family: 'Syne Mono', monospace; font-size: 8px; color: rgba(13,13,13,0.42); }
+    .lp-price-card { background: #0D0D14; border: 1px solid rgba(124,58,237,0.28); border-radius: 10px; padding: 16px; text-align: center; }
+    .lp-pc-badge { display: inline-block; background: rgba(124,58,237,0.18); border: 1px solid rgba(124,58,237,0.28); border-radius: 100px; padding: 3px 10px; font-family: 'Syne Mono', monospace; font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; color: #a78bfa; margin-bottom: 12px; }
+    .lp-pc-old { font-family: 'Syne Mono', monospace; font-size: 10px; color: rgba(250,249,247,0.28); text-decoration: line-through; margin-bottom: 4px; }
+    .lp-pc-price { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #FAF9F7; line-height: 1; margin-bottom: 4px; }
+    .lp-pc-sub { font-family: 'Syne Mono', monospace; font-size: 8.5px; color: rgba(250,249,247,0.38); margin-bottom: 14px; }
+    .lp-pc-guarantee { font-family: 'Syne Mono', monospace; font-size: 8px; color: rgba(250,249,247,0.32); margin-top: 10px; }
 
-    /* booking */
-    .app-booking { flex: 1; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; overflow: hidden; }
-    .booking-month {
-      font-family: 'Syne Mono', monospace; font-size: 9px;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--muted-2); text-align: center;
-    }
-    .booking-days-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; }
-    .booking-days-row span {
-      font-family: 'Syne Mono', monospace; font-size: 8px;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted); text-align: center; padding: 2px 0;
-    }
-    .booking-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; flex: 1; }
-    .booking-slot {
-      border: 1px solid var(--border-2); background: transparent;
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Syne Mono', monospace; font-size: 8px;
-      color: var(--muted-2); cursor: pointer; transition: all 0.15s;
-    }
-    .booking-slot:hover:not(:disabled) { border-color: var(--areia); color: var(--areia); }
-    .booking-slot--active { background: var(--areia) !important; border-color: var(--areia) !important; color: var(--obsidian) !important; }
-    .booking-slot:disabled { opacity: 0.22; cursor: default; }
-    .booking-confirm {
-      font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 500;
-      letter-spacing: 0.05em; padding: 8px; border: 1px solid var(--border-2);
-      background: transparent; color: var(--muted-2); cursor: not-allowed;
-      transition: all 0.2s; flex-shrink: 0;
-    }
-    .booking-confirm:not(:disabled) {
-      background: var(--areia); border-color: var(--areia);
-      color: var(--obsidian); cursor: pointer;
-    }
-    .booking-confirm:not(:disabled):hover { background: transparent; color: var(--areia); }
-    .booking-confirm--done {
-      background: var(--sage) !important; border-color: var(--sage) !important;
-      color: white !important; cursor: default !important;
-    }
+    /* --- design system demo --- */
+    .ds-wrap { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .ds-tabs { display: flex; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .ds-tab { flex: 1; border: none; background: transparent; cursor: pointer; font-family: 'Syne Mono', monospace; font-size: 8.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); padding: 8px 0; transition: all 0.15s; border-right: 1px solid var(--border); }
+    .ds-tab:last-child { border-right: none; }
+    .ds-tab--active { color: var(--areia); background: rgba(200,184,154,0.06); }
+    .ds-panel { flex: 1; overflow-y: auto; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+    .ds-panel--hidden { display: none; }
+    .ds-swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+    .ds-swatch { height: 38px; display: flex; align-items: flex-end; padding: 4px 5px; }
+    .ds-swatch span { font-family: 'Syne Mono', monospace; font-size: 7px; letter-spacing: 0.08em; color: rgba(250,249,247,0.85); text-transform: uppercase; }
+    .ds-swatch--light span { color: rgba(13,13,13,0.6); }
+    .ds-tokens { display: flex; flex-direction: column; gap: 4px; }
+    .ds-token { display: flex; align-items: center; justify-content: space-between; padding: 4px 7px; border: 1px solid var(--border); }
+    .ds-tok-name { font-family: 'Syne Mono', monospace; font-size: 8px; color: var(--muted-2); }
+    .ds-tok-val { font-family: 'Syne Mono', monospace; font-size: 8px; color: var(--areia); }
+    .ds-type-rows { display: flex; flex-direction: column; gap: 8px; }
+    .ds-type-row { padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+    .ds-type-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .ds-type-sample { color: var(--neve); line-height: 1.2; display: block; }
+    .ds-type-meta { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; color: var(--muted); display: block; margin-top: 2px; }
+    .ds-comp-section { display: flex; flex-direction: column; gap: 10px; }
+    .ds-comp-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+    .ds-btn { font-family: 'Syne', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.04em; padding: 4px 10px; border: 1px solid var(--border-2); background: transparent; color: var(--neve); cursor: pointer; transition: all 0.15s; }
+    .ds-btn--primary { background: var(--areia); border-color: var(--areia); color: var(--obsidian); }
+    .ds-btn--ghost { border-color: transparent; color: var(--muted-2); }
+    .ds-badge { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border: 1px solid var(--border-2); color: var(--muted-2); }
+    .ds-badge--green { border-color: var(--sage); color: var(--sage); }
+    .ds-badge--sand { border-color: var(--areia); color: var(--areia); }
+    .ds-field-wrap { display: flex; flex-direction: column; gap: 3px; }
+    .ds-field-label { font-family: 'Syne Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); }
+    .ds-field { border: 1px solid var(--border-2); padding: 5px 8px; font-size: 10px; color: var(--muted); background: transparent; font-family: 'Syne', sans-serif; }
+    .ds-field--focus { border-color: var(--areia); }
 
     /* --- mobile --- */
     @media (max-width: 900px) {
@@ -811,10 +854,6 @@
   </div>
 
   <div class="hero__right">
-    <blockquote class="hero__quote">
-      "Você não precisa esperar meses<br>
-      para ver sua ideia existir."
-    </blockquote>
     <div class="hero__stats">
       <div class="stat">
         <div class="stat__val">dias<em>.</em></div>
@@ -833,6 +872,427 @@
         <div class="stat__label">Prazo e parceria</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ENTREGÁVEIS -->
+<section class="section" id="entregaveis">
+  <div class="section__head">
+    <span class="section__label">Entregáveis</span>
+  </div>
+  <div class="exemplos__grid">
+
+    <!-- 01 App Mobile -->
+    <div class="exemplo">
+      <div class="exemplo__head">
+        <div class="eyebrow">01 — App mobile</div>
+        <div class="exemplo__name">App <em>mobile</em></div>
+      </div>
+      <div class="exemplo__body">
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="phone-screen">
+              <!-- Status bar -->
+              <div class="phone-sb">
+                <span class="phone-time">9:41</span>
+                <div class="phone-island"></div>
+                <span class="phone-batt">87%</span>
+              </div>
+              <!-- Screens -->
+              <div class="phone-screens">
+
+                <!-- Tela 1: Visão Geral -->
+                <div class="phone-s" id="fin-home">
+                  <div class="phone-scroll">
+                    <div class="fin-section-lbl">Maio 2025</div>
+                    <div class="fin-card">
+                      <span class="fin-lbl">Saldo total</span>
+                      <span class="fin-big">R$ 8.430</span>
+                      <div class="fin-row-sm">
+                        <div class="fin-sm-item">
+                          <span class="fin-sm-lbl">Receitas</span>
+                          <span class="fin-sm-val fin-green">+12.800</span>
+                        </div>
+                        <div class="fin-sm-item">
+                          <span class="fin-sm-lbl">Gastos</span>
+                          <span class="fin-sm-val fin-sand">−4.370</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fin-section-lbl">Últimos 6 meses</div>
+                    <div class="fin-bars">
+                      <div class="fin-bar fin-bar--g" style="height:52%"></div>
+                      <div class="fin-bar fin-bar--s" style="height:30%"></div>
+                      <div class="fin-bar fin-bar--g" style="height:70%"></div>
+                      <div class="fin-bar fin-bar--s" style="height:38%"></div>
+                      <div class="fin-bar fin-bar--g" style="height:85%"></div>
+                      <div class="fin-bar fin-bar--s" style="height:46%"></div>
+                    </div>
+                    <div class="fin-section-lbl">Recentes</div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">🛒</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Supermercado</span>
+                        <span class="fin-tx-cat">Alimentação</span>
+                      </div>
+                      <span class="fin-tx-val fin-sand">−R$ 280</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">💼</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Salário</span>
+                        <span class="fin-tx-cat">Receita</span>
+                      </div>
+                      <span class="fin-tx-val fin-green">+R$ 6.500</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tela 2: Transações -->
+                <div class="phone-s phone-s--hidden" id="fin-txs">
+                  <div class="phone-scroll">
+                    <div class="fin-section-lbl">Transações · maio</div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">💼</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Salário</span>
+                        <span class="fin-tx-cat">Receita · 01/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-green">+6.500</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">🏠</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Aluguel</span>
+                        <span class="fin-tx-cat">Moradia · 05/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-sand">−1.800</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">🛒</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Supermercado</span>
+                        <span class="fin-tx-cat">Aliment. · 08/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-sand">−280</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">🚗</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Combustível</span>
+                        <span class="fin-tx-cat">Transporte · 10/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-sand">−190</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">💰</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Freelance</span>
+                        <span class="fin-tx-cat">Receita · 12/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-green">+2.400</span>
+                    </div>
+                    <div class="fin-tx">
+                      <div class="fin-tx-ico">🎬</div>
+                      <div class="fin-tx-info">
+                        <span class="fin-tx-name">Streaming</span>
+                        <span class="fin-tx-cat">Lazer · 15/05</span>
+                      </div>
+                      <span class="fin-tx-val fin-sand">−55</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Tela 3: Metas -->
+                <div class="phone-s phone-s--hidden" id="fin-metas">
+                  <div class="phone-scroll">
+                    <div class="fin-section-lbl">Metas de economia</div>
+                    <div class="fin-goal">
+                      <div class="fin-goal-hd">
+                        <span class="fin-goal-name">✈️ Viagem Europa</span>
+                        <span class="fin-goal-pct">65%</span>
+                      </div>
+                      <div class="fin-goal-track"><div class="fin-goal-fill" style="width:65%"></div></div>
+                      <span class="fin-goal-meta">R$ 6.500 de R$ 10.000</span>
+                    </div>
+                    <div class="fin-goal">
+                      <div class="fin-goal-hd">
+                        <span class="fin-goal-name">🛡️ Reserva emergência</span>
+                        <span class="fin-goal-pct">42%</span>
+                      </div>
+                      <div class="fin-goal-track"><div class="fin-goal-fill" style="width:42%"></div></div>
+                      <span class="fin-goal-meta">R$ 12.600 de R$ 30.000</span>
+                    </div>
+                    <div class="fin-goal">
+                      <div class="fin-goal-hd">
+                        <span class="fin-goal-name">💻 Notebook novo</span>
+                        <span class="fin-goal-pct">88%</span>
+                      </div>
+                      <div class="fin-goal-track"><div class="fin-goal-fill" style="width:88%"></div></div>
+                      <span class="fin-goal-meta">R$ 7.040 de R$ 8.000</span>
+                    </div>
+                    <div class="fin-goal">
+                      <div class="fin-goal-hd">
+                        <span class="fin-goal-name">🏡 Entrada imóvel</span>
+                        <span class="fin-goal-pct">18%</span>
+                      </div>
+                      <div class="fin-goal-track"><div class="fin-goal-fill" style="width:18%"></div></div>
+                      <span class="fin-goal-meta">R$ 18.000 de R$ 100.000</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Bottom nav -->
+              <div class="phone-nav">
+                <button class="phone-nav-btn phone-nav-btn--active" onclick="showFinScreen('home',this)">
+                  <span class="phone-nav-icon">📊</span>
+                  <span class="phone-nav-lbl">Início</span>
+                </button>
+                <button class="phone-nav-btn" onclick="showFinScreen('txs',this)">
+                  <span class="phone-nav-icon">💳</span>
+                  <span class="phone-nav-lbl">Extrato</span>
+                </button>
+                <button class="phone-nav-btn" onclick="showFinScreen('metas',this)">
+                  <span class="phone-nav-icon">🎯</span>
+                  <span class="phone-nav-lbl">Metas</span>
+                </button>
+              </div>
+              <div class="phone-indicator"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 Landing Page -->
+    <div class="exemplo">
+      <div class="exemplo__head">
+        <div class="eyebrow">02 — Landing page</div>
+        <div class="exemplo__name">Landing <em>page</em></div>
+      </div>
+      <div class="exemplo__body">
+        <div class="app-frame" style="height:332px">
+          <div class="app-chrome">
+            <div class="app-chrome__dots"><span></span><span></span><span></span></div>
+            <span class="app-chrome__title">produto.io</span>
+          </div>
+          <div class="lp-wrap" id="lp-wrap">
+
+            <!-- Nav -->
+            <div class="lp-topnav">
+              <span class="lp-brand" style="font-weight:400;letter-spacing:0.04em">IA Pro</span>
+              <div class="lp-navlinks">
+                <button onclick="lpScroll('lp-hero')">Curso</button>
+                <button onclick="lpScroll('lp-modulos')">Módulos</button>
+                <button onclick="lpScroll('lp-preco')">Preço</button>
+              </div>
+            </div>
+
+            <!-- Hero -->
+            <div class="lp-hero-sec" id="lp-hero" style="background:#0D0D14;">
+              <div class="lp-ai-badge">🚀 +2.400 alunos</div>
+              <div class="lp-h1" style="color:#FAF9F7;font-size:18px">Domine IA e automatize tudo <em style="color:#a78bfa">que você faz.</em></div>
+              <div class="lp-sub" style="color:rgba(250,249,247,0.55)">Do ChatGPT ao seu próprio agente de IA. Método prático, em 6 semanas.</div>
+              <div class="lp-price-strip">
+                <span class="lp-price-old">R$ 997</span>
+                <span class="lp-price-new">R$ 497</span>
+              </div>
+              <button class="lp-btn--purple">Garantir minha vaga →</button>
+            </div>
+
+            <!-- Prova social -->
+            <div class="lp-proof-bar">
+              <div class="lp-proof-item">
+                <span class="lp-proof-strong">2.4k</span>
+                <span class="lp-proof-label">Alunos</span>
+              </div>
+              <div class="lp-proof-item">
+                <span class="lp-proof-strong">4.9★</span>
+                <span class="lp-proof-label">Avaliação</span>
+              </div>
+              <div class="lp-proof-item">
+                <span class="lp-proof-strong">6 sem</span>
+                <span class="lp-proof-label">Duração</span>
+              </div>
+              <div class="lp-proof-item">
+                <span class="lp-proof-strong">60h</span>
+                <span class="lp-proof-label">Conteúdo</span>
+              </div>
+            </div>
+
+            <!-- Para quem é -->
+            <div class="lp-plain-sec">
+              <div class="lp-section-hd">Para quem é?</div>
+              <div class="lp-checks">
+                <div class="lp-check"><span class="lp-check-mark">✓</span>Profissionais que querem 3× mais produtividade</div>
+                <div class="lp-check"><span class="lp-check-mark">✓</span>Empreendedores que querem automatizar o negócio</div>
+                <div class="lp-check"><span class="lp-check-mark">✓</span>Devs que querem dominar LLMs e agentes</div>
+                <div class="lp-check"><span class="lp-check-mark">✓</span>Quem quer sair na frente antes que todo mundo saiba</div>
+              </div>
+            </div>
+
+            <!-- Módulos -->
+            <div class="lp-plain-sec" id="lp-modulos">
+              <div class="lp-section-hd">Módulos do curso</div>
+              <div class="lp-module">
+                <span class="lp-mod-num">01</span>
+                <span class="lp-mod-name">Fundamentos de IA generativa</span>
+              </div>
+              <div class="lp-module">
+                <span class="lp-mod-num">02</span>
+                <span class="lp-mod-name">Prompt engineering avançado</span>
+              </div>
+              <div class="lp-module">
+                <span class="lp-mod-num">03</span>
+                <span class="lp-mod-name">Agentes e fluxos de automação</span>
+              </div>
+              <div class="lp-module">
+                <span class="lp-mod-num">04</span>
+                <span class="lp-mod-name">APIs de IA — OpenAI, Claude, Gemini</span>
+              </div>
+              <div class="lp-module">
+                <span class="lp-mod-num">05</span>
+                <span class="lp-mod-name">IA aplicada ao seu trabalho</span>
+              </div>
+              <div class="lp-module">
+                <span class="lp-mod-num">06</span>
+                <span class="lp-mod-name">Projeto final + certificado</span>
+              </div>
+            </div>
+
+            <!-- Depoimentos -->
+            <div class="lp-plain-sec">
+              <div class="lp-section-hd">O que dizem os alunos</div>
+              <div class="lp-testi">
+                <div class="lp-testi-stars">★★★★★</div>
+                <div class="lp-testi-text">"Automatizei 80% do meu trabalho em 2 semanas. Melhor investimento do ano."</div>
+                <div class="lp-testi-author">— Rafael M., Designer UX</div>
+              </div>
+              <div class="lp-testi">
+                <div class="lp-testi-stars">★★★★★</div>
+                <div class="lp-testi-text">"Saí do zero e hoje uso agentes de IA no meu e-commerce. Triplicou meu faturamento."</div>
+                <div class="lp-testi-author">— Camila S., Empreendedora</div>
+              </div>
+              <div class="lp-testi">
+                <div class="lp-testi-stars">★★★★★</div>
+                <div class="lp-testi-text">"Conteúdo mais denso e prático que já vi sobre IA. Vale 10x o preço."</div>
+                <div class="lp-testi-author">— Bruno L., Desenvolvedor</div>
+              </div>
+            </div>
+
+            <!-- Pricing -->
+            <div class="lp-plain-sec" id="lp-preco" style="border-bottom:none">
+              <div class="lp-section-hd">Investimento</div>
+              <div class="lp-price-card">
+                <div class="lp-pc-badge">Acesso vitalício + atualizações</div>
+                <div class="lp-pc-old">De R$ 997</div>
+                <div class="lp-pc-price">R$ 497</div>
+                <div class="lp-pc-sub">ou 12× de R$ 49,70 sem juros</div>
+                <button class="lp-btn--purple">Quero entrar agora →</button>
+                <div class="lp-pc-guarantee">🔒 Garantia incondicional de 7 dias</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 Design System -->
+    <div class="exemplo">
+      <div class="exemplo__head">
+        <div class="eyebrow">03 — Design system</div>
+        <div class="exemplo__name">Design <em>system</em></div>
+      </div>
+      <div class="exemplo__body">
+        <div class="app-frame" style="height:332px">
+          <div class="app-chrome">
+            <div class="app-chrome__dots"><span></span><span></span><span></span></div>
+            <span class="app-chrome__title">design.system</span>
+          </div>
+          <div class="ds-wrap">
+            <div class="ds-tabs">
+              <button class="ds-tab ds-tab--active" onclick="setDsTab(this,'ds-colors')">Cores</button>
+              <button class="ds-tab" onclick="setDsTab(this,'ds-type')">Tipos</button>
+              <button class="ds-tab" onclick="setDsTab(this,'ds-comp')">Comp.</button>
+            </div>
+            <!-- Cores -->
+            <div class="ds-panel" id="ds-colors">
+              <div class="ds-swatches">
+                <div class="ds-swatch" style="background:#0D0D0D"><span>Obsidian</span></div>
+                <div class="ds-swatch" style="background:#C8B89A"><span>Areia</span></div>
+                <div class="ds-swatch" style="background:#7B9E8A"><span>Sage</span></div>
+                <div class="ds-swatch ds-swatch--light" style="background:#FAF9F7;border:1px solid rgba(0,0,0,0.1)"><span>Neve</span></div>
+              </div>
+              <div class="ds-tokens">
+                <div class="ds-token">
+                  <span class="ds-tok-name">--color-primary</span>
+                  <span class="ds-tok-val">#C8B89A</span>
+                </div>
+                <div class="ds-token">
+                  <span class="ds-tok-name">--color-accent</span>
+                  <span class="ds-tok-val">#7B9E8A</span>
+                </div>
+                <div class="ds-token">
+                  <span class="ds-tok-name">--color-bg</span>
+                  <span class="ds-tok-val">#FAF9F7</span>
+                </div>
+                <div class="ds-token">
+                  <span class="ds-tok-name">--radius-sm</span>
+                  <span class="ds-tok-val">4px</span>
+                </div>
+              </div>
+            </div>
+            <!-- Tipos -->
+            <div class="ds-panel ds-panel--hidden" id="ds-type">
+              <div class="ds-type-rows">
+                <div class="ds-type-row">
+                  <span class="ds-type-sample" style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300">Display · 22px</span>
+                  <span class="ds-type-meta">Cormorant Garamond · Light</span>
+                </div>
+                <div class="ds-type-row">
+                  <span class="ds-type-sample" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;font-style:italic">Heading italic · 16px</span>
+                  <span class="ds-type-meta">Cormorant Garamond · Italic</span>
+                </div>
+                <div class="ds-type-row">
+                  <span class="ds-type-sample" style="font-family:'Syne',sans-serif;font-size:12px;font-weight:400">Body · 12px · Syne</span>
+                  <span class="ds-type-meta">Syne · Regular</span>
+                </div>
+                <div class="ds-type-row">
+                  <span class="ds-type-sample" style="font-family:'Syne Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase">CAPTION · 9PX</span>
+                  <span class="ds-type-meta">Syne Mono · Uppercase</span>
+                </div>
+              </div>
+            </div>
+            <!-- Componentes -->
+            <div class="ds-panel ds-panel--hidden" id="ds-comp">
+              <div class="ds-comp-section">
+                <div class="ds-comp-row">
+                  <button class="ds-btn ds-btn--primary">Primary</button>
+                  <button class="ds-btn">Secondary</button>
+                  <button class="ds-btn ds-btn--ghost">Ghost</button>
+                </div>
+                <div class="ds-comp-row">
+                  <span class="ds-badge ds-badge--sand">New</span>
+                  <span class="ds-badge ds-badge--green">Ativo</span>
+                  <span class="ds-badge">Beta</span>
+                </div>
+                <div class="ds-field-wrap">
+                  <span class="ds-field-label">Campo de texto</span>
+                  <div class="ds-field">Placeholder…</div>
+                </div>
+                <div class="ds-field-wrap">
+                  <span class="ds-field-label">Focused</span>
+                  <div class="ds-field ds-field--focus">Digite aqui…</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -970,116 +1430,6 @@
   </div>
 </section>
 
-<!-- ENTREGÁVEIS -->
-<section class="section" id="entregaveis">
-  <div class="section__head">
-    <span class="section__label">Entregáveis</span>
-  </div>
-  <div class="exemplos__grid">
-
-    <!-- 01 Planner de tarefas -->
-    <div class="exemplo">
-      <div class="exemplo__head">
-        <div class="eyebrow">01 — Web app</div>
-        <div class="exemplo__name">Planner <em>de tarefas</em></div>
-      </div>
-      <div class="exemplo__body">
-        <div class="app-frame">
-          <div class="app-chrome">
-            <div class="app-chrome__dots"><span></span><span></span><span></span></div>
-            <span class="app-chrome__title">planner.app</span>
-          </div>
-          <div class="app-todo">
-            <div class="todo-input-row">
-              <input class="todo-input" id="todo-input" type="text" placeholder="Nova tarefa…" maxlength="48">
-              <button class="todo-add" onclick="addTodo()">+</button>
-            </div>
-            <ul class="todo-list" id="todo-list">
-              <li class="todo-item todo-done" onclick="toggleTodo(this)">
-                <span class="todo-cb">✓</span>
-                <span class="todo-text">Definir requisitos</span>
-              </li>
-              <li class="todo-item" onclick="toggleTodo(this)">
-                <span class="todo-cb"></span>
-                <span class="todo-text">Criar wireframes</span>
-              </li>
-              <li class="todo-item" onclick="toggleTodo(this)">
-                <span class="todo-cb"></span>
-                <span class="todo-text">Apresentar ao time</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 02 Dashboard analítico -->
-    <div class="exemplo">
-      <div class="exemplo__head">
-        <div class="eyebrow">02 — Plataforma</div>
-        <div class="exemplo__name">Dashboard <em>analítico</em></div>
-      </div>
-      <div class="exemplo__body">
-        <div class="app-frame">
-          <div class="app-chrome">
-            <div class="app-chrome__dots"><span></span><span></span><span></span></div>
-            <span class="app-chrome__title">analytics.app</span>
-          </div>
-          <div class="app-dash">
-            <div class="dash-tabs">
-              <button class="dash-tab dash-tab--active" onclick="setDashPeriod(this,'7d')">7 dias</button>
-              <button class="dash-tab" onclick="setDashPeriod(this,'30d')">30 dias</button>
-              <button class="dash-tab" onclick="setDashPeriod(this,'90d')">90 dias</button>
-            </div>
-            <div class="dash-metrics">
-              <div class="dash-metric">
-                <span class="dash-val" id="d-receita">R$ 12.4k</span>
-                <span class="dash-key">Receita</span>
-              </div>
-              <div class="dash-metric">
-                <span class="dash-val" id="d-users">847</span>
-                <span class="dash-key">Usuários</span>
-              </div>
-              <div class="dash-metric">
-                <span class="dash-val" id="d-conv">3.2%</span>
-                <span class="dash-key">Conversão</span>
-              </div>
-            </div>
-            <div class="dash-chart">
-              <div class="dash-bars" id="dash-bars"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 03 Sistema de agendamento -->
-    <div class="exemplo">
-      <div class="exemplo__head">
-        <div class="eyebrow">03 — MVP</div>
-        <div class="exemplo__name">Sistema de <em>agendamento</em></div>
-      </div>
-      <div class="exemplo__body">
-        <div class="app-frame">
-          <div class="app-chrome">
-            <div class="app-chrome__dots"><span></span><span></span><span></span></div>
-            <span class="app-chrome__title">schedule.app</span>
-          </div>
-          <div class="app-booking">
-            <div class="booking-month">Maio 2025</div>
-            <div class="booking-days-row">
-              <span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span>
-            </div>
-            <div class="booking-grid" id="booking-grid"></div>
-            <button class="booking-confirm" id="booking-confirm" disabled onclick="confirmBooking()">Confirmar horário</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- CONTATO -->
 <section class="section" id="contato">
   <div class="section__head">
@@ -1163,109 +1513,38 @@
 <script>
   function handleForm(e) {
     e.preventDefault();
-    const nome  = document.getElementById('nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const msg   = document.getElementById('msg').value.trim();
+    var nome  = document.getElementById('nome').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var msg   = document.getElementById('msg').value.trim();
     if (!nome || !email || !msg) return;
-    const subject = encodeURIComponent('Contato via keiro.com.br: ' + nome);
-    const body    = encodeURIComponent('Nome: ' + nome + '\nE-mail: ' + email + '\n\n' + msg);
+    var subject = encodeURIComponent('Contato via keiro.com.br: ' + nome);
+    var body    = encodeURIComponent('Nome: ' + nome + '\nE-mail: ' + email + '\n\n' + msg);
     window.location.href = 'mailto:guilherme@keiro.com.br?subject=' + subject + '&body=' + body;
   }
 
-  // --- todo app ---
-  function toggleTodo(el) {
-    el.classList.toggle('todo-done');
-    el.querySelector('.todo-cb').textContent = el.classList.contains('todo-done') ? '✓' : '';
+  // --- mobile app ---
+  function showFinScreen(screen, btn) {
+    document.querySelectorAll('.phone-s').forEach(function(s) { s.classList.add('phone-s--hidden'); });
+    document.querySelectorAll('.phone-nav-btn').forEach(function(b) { b.classList.remove('phone-nav-btn--active'); });
+    document.getElementById('fin-' + screen).classList.remove('phone-s--hidden');
+    btn.classList.add('phone-nav-btn--active');
   }
-  function addTodo() {
-    var input = document.getElementById('todo-input');
-    var text = input.value.trim();
-    if (!text) return;
-    var list = document.getElementById('todo-list');
-    var li = document.createElement('li');
-    li.className = 'todo-item';
-    li.addEventListener('click', function() { toggleTodo(this); });
-    var cb = document.createElement('span'); cb.className = 'todo-cb';
-    var txt = document.createElement('span'); txt.className = 'todo-text'; txt.textContent = text;
-    li.appendChild(cb); li.appendChild(txt);
-    list.appendChild(li);
-    input.value = '';
-  }
-  document.getElementById('todo-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') addTodo();
-  });
 
-  // --- dashboard app ---
-  var dashData = {
-    '7d':  { r:'R$ 12.4k', u:'847',  c:'3.2%', b:[60,45,70,55,80,65,75] },
-    '30d': { r:'R$ 48.2k', u:'3.1k', c:'4.1%', b:[40,55,35,65,50,70,45,60,75,80,55,65,70,50,40,75,85,60,55,70,80,65,50,75,90,70,60,85,75,80] },
-    '90d': { r:'R$ 142k',  u:'9.4k', c:'5.3%', b:[45,55,40,60,70,55,65,75,80,60,70,85] }
-  };
-  function renderBars(bars) {
-    var el = document.getElementById('dash-bars');
-    var max = Math.max.apply(null, bars);
-    el.innerHTML = bars.map(function(v) {
-      return '<div class="dash-bar" style="height:' + Math.round(v/max*100) + '%"></div>';
-    }).join('');
+  // --- lp demo ---
+  function lpScroll(id) {
+    var wrap = document.getElementById('lp-wrap');
+    var el = document.getElementById(id);
+    if (!wrap || !el) return;
+    wrap.scrollTo({ top: el.offsetTop - 28, behavior: 'smooth' });
   }
-  function setDashPeriod(btn, period) {
-    document.querySelectorAll('.dash-tab').forEach(function(t) { t.classList.remove('dash-tab--active'); });
-    btn.classList.add('dash-tab--active');
-    var d = dashData[period];
-    document.getElementById('d-receita').textContent = d.r;
-    document.getElementById('d-users').textContent = d.u;
-    document.getElementById('d-conv').textContent = d.c;
-    renderBars(d.b);
-  }
-  renderBars(dashData['7d'].b);
 
-  // --- booking app ---
-  (function() {
-    var times = ['09h','14h','16h'];
-    var taken = [1,4,5,7,10,12];
-    var selected = null;
-    var grid = document.getElementById('booking-grid');
-    var confirmBtn = document.getElementById('booking-confirm');
-    for (var row = 0; row < 3; row++) {
-      for (var col = 0; col < 5; col++) {
-        var idx = row * 5 + col;
-        var slot = document.createElement('button');
-        slot.className = 'booking-slot';
-        slot.textContent = times[row];
-        if (taken.indexOf(idx) !== -1) {
-          slot.disabled = true;
-        } else {
-          (function(s) {
-            s.addEventListener('click', function() {
-              if (selected && selected !== s) selected.classList.remove('booking-slot--active');
-              if (selected === s) {
-                s.classList.remove('booking-slot--active');
-                selected = null;
-                confirmBtn.disabled = true;
-              } else {
-                s.classList.add('booking-slot--active');
-                selected = s;
-                confirmBtn.disabled = false;
-              }
-            });
-          })(slot);
-        }
-        grid.appendChild(slot);
-      }
-    }
-  })();
-
-  function confirmBooking() {
-    var btn = document.getElementById('booking-confirm');
-    var active = document.querySelector('.booking-slot--active');
-    btn.textContent = 'Confirmado ✓';
-    btn.disabled = true;
-    btn.classList.add('booking-confirm--done');
-    setTimeout(function() {
-      if (active) active.classList.remove('booking-slot--active');
-      btn.textContent = 'Confirmar horário';
-      btn.classList.remove('booking-confirm--done');
-    }, 2000);
+  // --- design system tabs ---
+  function setDsTab(btn, panelId) {
+    var wrap = btn.closest('.ds-wrap');
+    wrap.querySelectorAll('.ds-tab').forEach(function(t) { t.classList.remove('ds-tab--active'); });
+    wrap.querySelectorAll('.ds-panel').forEach(function(p) { p.classList.add('ds-panel--hidden'); });
+    btn.classList.add('ds-tab--active');
+    document.getElementById(panelId).classList.remove('ds-panel--hidden');
   }
 </script>
 
