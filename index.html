@@ -26,8 +26,13 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--obsidian);
-      color: var(--neve);
+      background: #FAF9F7;
+      color: var(--obsidian);
+      --neve:     #0D0D0D;
+      --muted:    rgba(13, 13, 13, 0.35);
+      --muted-2:  rgba(13, 13, 13, 0.60);
+      --border:   rgba(0, 0, 0, 0.08);
+      --border-2: rgba(0, 0, 0, 0.12);
       font-family: 'Syne', sans-serif;
       font-size: 15px;
       line-height: 1.6;
@@ -58,6 +63,11 @@
       background: rgba(13, 13, 13, 0.86);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
+      --neve:     #FAF9F7;
+      --muted:    rgba(240, 237, 232, 0.35);
+      --muted-2:  rgba(240, 237, 232, 0.62);
+      --border:   rgba(255, 255, 255, 0.06);
+      --border-2: rgba(255, 255, 255, 0.11);
     }
     .nav__inner {
       max-width: 1280px;
@@ -484,6 +494,13 @@
     /* --- footer --- */
     .footer {
       padding: 56px 48px;
+      background: var(--obsidian);
+      color: #FAF9F7;
+      --neve:     #FAF9F7;
+      --muted:    rgba(240, 237, 232, 0.35);
+      --muted-2:  rgba(240, 237, 232, 0.62);
+      --border:   rgba(255, 255, 255, 0.06);
+      --border-2: rgba(255, 255, 255, 0.11);
     }
     .footer__inner {
       max-width: 1280px;
